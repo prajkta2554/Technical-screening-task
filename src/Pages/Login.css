@@ -1,0 +1,392 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== PAGE WRAPPER ===== */
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+
+  /* BASE dark teal-black color */
+  background-color: #0d2420;
+
+  /* LAYERED gradients — this creates the exact look */
+  background-image:
+    /* Orange-red blob — bottom right corner */
+    radial-gradient(
+      ellipse 65% 60% at 85% 95%,
+      rgba(200, 70, 20, 0.85) 0%,
+      rgba(160, 40, 10, 0.5) 30%,
+      transparent 65%
+    ),
+    /* Smaller orange glow — right edge center */
+    radial-gradient(
+      ellipse 40% 40% at 100% 65%,
+      rgba(220, 90, 15, 0.5) 0%,
+      transparent 60%
+    ),
+    /* Dark teal-green — top left area */
+    radial-gradient(
+      ellipse 70% 60% at 10% 20%,
+      rgba(8, 60, 55, 0.9) 0%,
+      rgba(5, 40, 38, 0.6) 40%,
+      transparent 70%
+    ),
+    /* Deep background fill */
+    linear-gradient(
+      135deg,
+      #0a1e1c 0%,
+      #0d2420 40%,
+      #111a15 70%,
+      #0f1a10 100%
+    );
+}
+
+/* ===== TOP LEFT LOGO (fixed position, sits above both sides) ===== */
+.login-logo {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.logo-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #0cc8a8;
+}
+
+.logo-inner-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* ===== LEFT SIDE ===== */
+/* Takes up 55% width, contains the hero text */
+.login-left {
+  flex: 0 0 55%;
+  display: flex;
+  align-items: center;
+  padding: 80px 60px 60px 60px;
+}
+
+.login-left-content {
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Big headline */
+.hero-heading {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+/* The teal word "hours" */
+.hero-accent {
+  color: #0cc8a8;
+}
+
+/* "What's included" section */
+.features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.features-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #cccccc;
+  letter-spacing: 0.3px;
+}
+
+/* Remove default list styling */
+.features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #b0b0b0;
+  line-height: 1.5;
+}
+
+/* Teal checkmark */
+.check-icon {
+  color: green;
+  font-size: 13px;
+  margin-top: 1px;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+/* Trustpilot rating */
+.trustpilot {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trustpilot-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.star-icon {
+  color: green;
+  font-size: 16px;
+}
+
+.trustpilot-name {
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.rating-bold {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.rating-sub {
+  font-size: 12px;
+  color: #888888;
+}
+
+/* ===== RIGHT SIDE ===== */
+/* Takes up 45% width, centers the white card */
+.login-right {
+  flex: 0 0 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 48px;
+}
+
+/* ===== WHITE CARD ===== */
+.login-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111111;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #666666;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Teal links */
+.login-link {
+  color: #0cc8a8;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== FORM ===== */
+.form-group {
+  margin-bottom: 14px;
+}
+
+/* Every text input */
+.form-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #111111;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: #0cc8a8;
+}
+
+.form-input::placeholder {
+  color: #aaaaaa;
+}
+
+/* Password field wrapper (to position toggle button inside) */
+.password-group {
+  position: relative;
+}
+
+.password-group .form-input {
+  padding-right: 44px;
+}
+
+/* Eye icon button inside password field */
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  color: #888888;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Checkbox row */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #0cc8a8;
+  flex-shrink: 0;
+}
+
+.checkbox-label {
+  font-size: 13px;
+  color: #555555;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+/* ===== CREATE ACCOUNT BUTTON ===== */
+.create-account-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #0cc8a8;
+  color: #000000;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.2s;
+}
+
+.create-account-btn:hover {
+  background-color: #0aaf93;
+}
+
+/* ===== SOCIAL BUTTONS ROW ===== */
+.social-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-btn {
+  flex: 1;
+  height: 48px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.social-btn:hover {
+  opacity: 0.85;
+}
+
+/* Black Apple button */
+.social-apple {
+  background-color: #000000;
+}
+
+/* Light Google button */
+.social-google {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+}
+
+/* Blue Meta button */
+.social-meta {
+  background-color: #1877f2;
+}
+
+/* ===== RESPONSIVE — mobile ===== */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-left {
+    flex: none;
+    padding: 80px 28px 40px;
+  }
+
+  .hero-heading {
+    font-size: 28px;
+  }
+
+  .login-right {
+    flex: none;
+    padding: 0 20px 40px;
+  }
+
+  .login-card {
+    padding: 32px 24px;
+  }
+}
